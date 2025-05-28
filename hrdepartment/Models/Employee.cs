@@ -16,8 +16,10 @@ namespace hrdepartment.Models
         public string Education { get; set; }
         public string Specialty { get; set; }
         public string Position { get; set; }
-        public string Salary { get; set; }
-        public string HireDate { get; set; }
+        public decimal Salary { get; set; }
+        public DateTime DateOfBirth { get; set; }
+
+        public DateTime HireDate { get; set; }
         public Department Department { get; set; }
         public DateTime LastAppointmentDate { get; set; }
 
