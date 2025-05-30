@@ -24,6 +24,19 @@ namespace hrdepartment.Models
             return Employees.Count;
         }
 
+
+
+        //methods
+
+        public void AddEmployee(Employee employee)
+        {
+            Employees.Add(employee);
+        }
+
+
+
+
+
     }
 
 
