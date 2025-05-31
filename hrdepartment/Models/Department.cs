@@ -63,9 +63,22 @@ namespace hrdepartment.Models
             }
         }
 
+        public Employee GetEmployeeById(int id)
+        {
+            return Employees.FirstOrDefault(e => e.Id == id);
+        }
+
+        public List<Employee> FindEmployeesByLastName(string lastName)
+        {
+            return Employees.Where(e => e.LastName == lastName).ToList();
+        }
 
 
+        public List<Employee> GetEmployeesByDepartmentName(string departmentName)
+        {
+            return Employees.Where( e => e.Department!=null && e.Department.Name == departmentName).ToList();
 
+        }
 
 
     }
