@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace hrdepartment
 {
-    public partial class Form1 : Form
+    public partial class DepartmentForm : Form
     {
-        public Form1()
+        public DepartmentForm()
         {
             InitializeComponent();
         }
