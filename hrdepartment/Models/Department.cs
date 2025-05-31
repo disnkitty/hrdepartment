@@ -54,6 +54,8 @@ namespace hrdepartment.Models
             }
         }
 
+    
+
         public void RemoveEmployee(int employeeId)
         {
             var employeeToRemove = Employees.FirstOrDefault(e => e.Id == employeeId);
@@ -68,7 +70,7 @@ namespace hrdepartment.Models
             return Employees.FirstOrDefault(e => e.Id == id);
         }
 
-        public List<Employee> FindEmployeesByLastName(string lastName)
+        public List<Employee> GetEmployeesByLastName(string lastName)
         {
             return Employees.Where(e => e.LastName == lastName).ToList();
         }
@@ -76,10 +78,14 @@ namespace hrdepartment.Models
 
         public List<Employee> GetEmployeesByDepartmentName(string departmentName)
         {
-            return Employees.Where( e => e.Department!=null && e.Department.Name == departmentName).ToList();
+            return Employees.Where(e => e.Department != null && e.Department.Name == departmentName).ToList();
 
         }
 
+        public List<Employee> GetEmployeesByPosition(string position)
+        {
+            return Employees.Where (e => e.Position== position).ToList();
+        }
 
     }
 
