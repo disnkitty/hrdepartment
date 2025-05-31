@@ -54,6 +54,16 @@ namespace hrdepartment.Models
             }
         }
 
+        public void RemoveEmployee(int employeeId)
+        {
+            var employeeToRemove = Employees.FirstOrDefault(e => e.Id == employeeId);
+            if (employeeToRemove != null)
+            {
+                Employees.Remove(employeeToRemove);
+            }
+        }
+
+
 
 
 
