@@ -30,11 +30,15 @@ namespace hrdepartment.Models
         public string Specialty { get; set; }
         public string Position { get; set; }
         public decimal Salary { get; set; }
-       
+
 
         public DateTime HireDate { get; set; } //Дата прийому на роботу
         public Department Department { get; set; }
         public DateTime LastAppointmentDate { get; set; }//Дата останнього призначення
+
+
+        //методи
+
 
     }
 }

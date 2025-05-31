@@ -33,6 +33,27 @@ namespace hrdepartment.Models
             Employees.Add(employee);
         }
 
+        public void EditEmployee(Employee updatedEmployee)
+        {
+            var existingEmployee = Employees.FirstOrDefault(e => e.Id == updatedEmployee.Id);
+
+            if (existingEmployee != null)
+            {
+                existingEmployee.LastName = updatedEmployee.LastName;
+                existingEmployee.FirstName = updatedEmployee.FirstName;
+                existingEmployee.MiddleName = updatedEmployee.MiddleName;
+                existingEmployee.DateOfBirth = updatedEmployee.DateOfBirth;
+                existingEmployee.PassportData = updatedEmployee.PassportData;
+                existingEmployee.Education = updatedEmployee.Education;
+                existingEmployee.Specialty = updatedEmployee.Specialty;
+                existingEmployee.Position = updatedEmployee.Position;
+                existingEmployee.Salary = updatedEmployee.Salary;
+                existingEmployee.HireDate = updatedEmployee.HireDate;
+                existingEmployee.Department = updatedEmployee.Department;
+                existingEmployee.LastAppointmentDate = updatedEmployee.LastAppointmentDate;
+            }
+        }
+
 
 
 
