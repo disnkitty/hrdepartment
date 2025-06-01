@@ -10,9 +10,9 @@ namespace hrdepartment.Models
     {
         public string Id { get; set; }  //айді приказа
         public DateTime Date { get; set; }
-        public string OrderType { get; set; }  // наприклад звільнення або перевод і тд 
-        public Employee Employee { get; set; }  //сотрудник до якого відноситься приказ
-        public string Description { get; set; }  //описание приказа (например, детали или причины)
+        public string OrderType { get; set; } 
+        public Employee Employee { get; set; }  
+        public string Description { get; set; }  
 
         public void GenerateOrderTextFile(string path)
         {

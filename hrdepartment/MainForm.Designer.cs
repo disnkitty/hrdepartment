@@ -1,4 +1,7 @@
-﻿namespace hrdepartment
+﻿using hrdepartment.Models;
+using System.Windows.Forms;
+
+namespace hrdepartment
 {
     partial class MainForm
     {
@@ -18,6 +21,16 @@
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+        private void employeesGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var employee = (Employee)dataGridView1.Rows[e.RowIndex].DataBoundItem;
+                var detailsForm = new EmployeeDetailsForm();
+                detailsForm.SetEmployee(employee);
+                detailsForm.ShowDialog();
+            }
         }
 
         #region Windows Form Designer generated code
@@ -39,7 +52,7 @@
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Age = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Department = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.departmentColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -90,7 +103,7 @@
             this.id,
             this.FullName,
             this.Age,
-            this.Department,
+            this.departmentColumn,
             this.Position,
             this.FullInfo});
             this.dataGridView1.Location = new System.Drawing.Point(114, 361);
@@ -152,10 +165,10 @@
             // 
             // Department
             // 
-            this.Department.HeaderText = "Department";
-            this.Department.MinimumWidth = 8;
-            this.Department.Name = "Department";
-            this.Department.Width = 150;
+            this.departmentColumn.HeaderText = "Department";
+            this.departmentColumn.MinimumWidth = 8;
+            this.departmentColumn.Name = "Department";
+            this.departmentColumn.Width = 150;
             // 
             // Position
             // 
@@ -209,7 +222,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Age;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Department;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departmentColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Position;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullInfo;
     }

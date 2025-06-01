@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace hrdepartment.Models
 {
-    internal class Employee
+    public class Employee
     {
         public int Id { get; set; }
         public string LastName { get; set; }
@@ -14,16 +14,7 @@ namespace hrdepartment.Models
         public string FirstName { get; set; }
         public string MiddleName { get; set; }
         public DateTime DateOfBirth { get; set; }
-        public int Age
-        {
-            get
-            {
-                var today = DateTime.Today;
-                int age = today.Year - DateOfBirth.Year;
-                if (DateOfBirth > today.AddYears(-age)) age--;
-                return age;
-            }
-        }
+       
 
         public string PassportData { get; set; }
         public string Education { get; set; }
@@ -38,6 +29,11 @@ namespace hrdepartment.Models
 
 
         //методи
+        public string FullName => $"{LastName} {FirstName} {MiddleName}";
+        public int Age => DateTime.Now.Year - DateOfBirth.Year;
+        public string DepartmentName => Department?.Name;
+        public string FullInfo => $"{Position}, {Department?.Name}";
+
 
 
     }
